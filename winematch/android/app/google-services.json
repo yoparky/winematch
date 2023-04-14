@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "504949298910",
+    "project_id": "winematch-96637",
+    "storage_bucket": "winematch-96637.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504949298910:android:3e4f9d2063a2f6f052d44f",
+        "android_client_info": {
+          "package_name": "com.example.winematch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "504949298910-a4s4ftebgjadlklhum2cfh0hqgffv228.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlVm3ZkTecbxJm7haj0zdWYtQlLH-Ojwk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "504949298910-a4s4ftebgjadlklhum2cfh0hqgffv228.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

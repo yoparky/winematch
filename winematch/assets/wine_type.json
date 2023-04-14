@@ -1,0 +1,244 @@
+{ "category": [
+    { 
+      "id": "dry_white",
+      "name": "Dry White",
+      "members": 
+        [
+          {
+            "id": "white_table_wine",
+            "name": "White Table Wine",
+            "description": "Description 1"
+          },
+          {
+            "id": "sauvignon_blanc",
+            "name": "Sauvignon Blanc",
+            "description": "Description 2"
+          },
+          {
+            "id": "gruner_veltliner",
+            "name": "Grüner Veltliner",
+            "description": "Description 3"
+          },
+          {
+            "id": "pinot_grigio",
+            "name": "Pinot Grigio",
+            "description": "Description 3"
+          },
+          {
+            "id": "albarino",
+            "name": "Albariño",
+            "description": "Description 3"
+          }
+        ]
+    },
+    {
+      "id": "sweet_white",
+      "name": "Sweet White",
+      "members": 
+        [
+          {
+            "id": "gewurztraminer",
+            "name": "Gewürztraminer",
+            "description": "Description 1"
+          },
+          {
+            "id": "muller-thurgau",
+            "name": "Müller-Thurgau",
+            "description": "Description 2"
+          },
+          {
+            "id": "malvasia",
+            "name": "Malvasia",
+            "description": "Description 3"
+          },
+          {
+            "id": "moscato",
+            "name": "Moscato",
+            "description": "Description 3"
+          },
+          {
+            "id": "riesling",
+            "name": "Riesling",
+            "description": "Description 3"
+          }
+        ]
+    },
+    {
+      "id": "rich_white",
+      "name": "Rich White",
+      "members":
+        [
+          {
+            "id": "chardonnay",
+            "name": "Chardonnay",
+            "description": "Description 1"
+          },
+          {
+            "id": "roussanne",
+            "name": "Roussanne",
+            "description": "Description 2"
+          },
+          {
+            "id": "marsanne",
+            "name": "Marsanne",
+            "description": "Description 3"
+          },
+          {
+            "id": "viognier",
+            "name": "Viognier",
+            "description": "Description 3"
+          }
+        ]
+    },
+    {
+      "id": "sparkling",
+      "name": "Sparkling",
+      "members": 
+        [
+          {
+            "id": "sparkling_wine",
+            "name": "Sparkling Wine",
+            "description": "Description 1"
+          },
+          {
+            "id": "champagne",
+            "name": "Champagne",
+            "description": "Description 2"
+          },
+          {
+            "id": "prosecco",
+            "name": "Prosecco",
+            "description": "Description 3"
+          },
+          {
+            "id": "cava",
+            "name": "Cava",
+            "description": "Description 3"
+          }
+        ]
+    },
+    {
+      "id": "light_red",
+      "name": "Light Red",
+      "members": 
+        [
+          {
+            "id": "st_laurent",
+            "name": "St. Laurent",
+            "description": "Description 1"
+          },
+          {
+            "id": "pinot_noir",
+            "name": "Pinot Noir",
+            "description": "Description 2"
+          },
+          {
+            "id": "zweigelt",
+            "name": "Zweigelt",
+            "description": "Description 3"
+          },
+          {
+            "id": "gamay",
+            "name": "Gamay",
+            "description": "Description 3"
+          }
+        ]
+    },
+    {
+      "id": "medium_red",
+      "name": "Medium Red",
+      "members": 
+        [
+          {
+            "id": "red_table_wine",
+            "name": "Red Table Wine",
+            "description": "Description 1"
+          },
+          {
+            "id": "tempranillo",
+            "name": "Tempranillo",
+            "description": "Description 2"
+          },
+          {
+            "id": "sangiovese",
+            "name": "Sangiovese",
+            "description": "Description 3"
+          },
+          {
+            "id": "zinfandel",
+            "name": "Zinfandel",
+            "description": "Description 3"
+          },
+          {
+            "id": "grenache",
+            "name": "Grenache",
+            "description": "Description 3"
+          },
+          {
+            "id": "merlot",
+            "name": "Merlot",
+            "description": "Description 3"
+          }
+        ]
+    },
+    {
+      "id": "bold_red",
+      "name": "Bold Red",
+      "members":
+      [
+        {
+          "id": "cabernet_savignon",
+          "name": "Cabernet Sauvignon",
+          "description": "Description 1"
+        },
+        {
+          "id": "monastrell",
+          "name": "Monastrell",
+          "description": "Description 2"
+        },
+        {
+          "id": "aglianico",
+          "name": "Aglianico",
+          "description": "Description 3"
+        },
+        {
+          "id": "malbec",
+          "name": "Malbec",
+          "description": "Description 3"
+        },
+        {
+          "id": "syrah",
+          "name": "Syrah",
+          "description": "Description 3"
+        }
+      ]
+    },
+    {
+      "id": "dessert",
+      "name": "Dessert",
+      "members":
+        [
+          {
+            "id": "late_harvest",
+            "name": "Late Harvest",
+            "description": "Description 1"
+          },
+          {
+            "id": "ice_wine",
+            "name": "Ice Wine",
+            "description": "Description 2"
+          },
+          {
+            "id": "sherry",
+            "name": "Sherry",
+            "description": "Description 3"
+          },
+          {
+            "id": "port",
+            "name": "Port",
+            "description": "Description 3"
+          }
+        ]
+    }
+  ]
+}
