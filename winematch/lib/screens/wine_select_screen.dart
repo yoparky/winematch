@@ -2,9 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
-
 import 'package:winematch/models/wine_type.dart';
-
 import '../widgets/wine_selection_form.dart';
 
 class MyApp extends StatelessWidget {
