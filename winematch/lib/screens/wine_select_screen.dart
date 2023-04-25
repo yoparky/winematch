@@ -36,38 +36,41 @@ class _WineSelectPageState extends State<WineSelectPage> {
   @override
   Widget build(BuildContext context) {
     readJson();
-    return Padding(
-      padding: const EdgeInsets.all(25),
-      child: Column(
-        children: [
-          // Display the data loaded from sample.json
-          _items.isNotEmpty
-              ? Expanded(
-                  child: ListView.builder(
-                    itemCount: _items.length,
-                    itemBuilder: (context, index) {
-                      return Card(
-                        key: ValueKey(_items[index]["id"]),
-                        margin: const EdgeInsets.all(10),
-                        color: Colors.amber.shade100,
-                        child: ListTile(
-                            leading: Text(_items[index]["name"]),
-                            title: Text(_items[index]["name"]),
-                            subtitle: Text(_items[index]["name"]),
-                            onTap: () {
-                              var wineType = WineType(_items, index);
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          WineSelectionForm(wineType)));
-                            }),
-                      );
-                    },
-                  ),
-                )
-              : Container()
-        ],
+    return Scaffold(
+      appBar: AppBar(title: Text('Wines')),
+      body: Padding(
+        padding: const EdgeInsets.all(25),
+        child: Column(
+          children: [
+            // Display the data loaded from sample.json
+            _items.isNotEmpty
+                ? Expanded(
+                    child: ListView.builder(
+                      itemCount: _items.length,
+                      itemBuilder: (context, index) {
+                        return Card(
+                          key: ValueKey(_items[index]["id"]),
+                          margin: const EdgeInsets.all(10),
+                          color: Colors.amber.shade100,
+                          child: ListTile(
+                              leading: Text(_items[index]["name"]),
+                              title: Text(_items[index]["name"]),
+                              subtitle: Text(_items[index]["name"]),
+                              onTap: () {
+                                var wineType = WineType(_items, index);
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            WineSelectionForm(wineType)));
+                              }),
+                        );
+                      },
+                    ),
+                  )
+                : Container()
+          ],
+        ),
       ),
     );
   }

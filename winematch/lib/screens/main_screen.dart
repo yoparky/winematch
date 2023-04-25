@@ -27,7 +27,7 @@ class MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Winematch')),
+      // appBar: AppBar(title: Text('Winematch')),
       body: Center(child: _widgetOptions.elementAt(_selectedIndex)),
       bottomNavigationBar: BottomNavigationBar(
           items: [
@@ -41,7 +41,7 @@ class MainScreenState extends State<MainScreen> {
                         Icons.search_off,
                         color: Colors.grey,
                       ),
-                label: 'search'),
+                label: 'wine'),
             BottomNavigationBarItem(
                 icon: _selectedIndex == 1
                     ? const Icon(
@@ -52,7 +52,7 @@ class MainScreenState extends State<MainScreen> {
                         Icons.search_off,
                         color: Colors.grey,
                       ),
-                label: 'search'),
+                label: 'recipe'),
             BottomNavigationBarItem(
                 icon: _selectedIndex == 2
                     ? const Icon(
@@ -63,7 +63,7 @@ class MainScreenState extends State<MainScreen> {
                         Icons.search_off,
                         color: Colors.grey,
                       ),
-                label: 'search'),
+                label: 'cellar'),
           ],
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.black,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:winematch/screens/cellar_form_scaffold.dart';
 import '../models/post_data.dart';
+import '../widgets/cellar_entry_detail.dart';
 
 class EntryLists extends StatefulWidget {
   const EntryLists({Key? key}) : super(key: key);
@@ -9,14 +11,74 @@ class EntryLists extends StatefulWidget {
   EntryListsState createState() => EntryListsState();
 }
 
+// Search function courtesy of https://enoiu.com/en/app-develop/flutter-search-function/
 class EntryListsState extends State<EntryLists> {
+  bool _searchBoolean = false;
+  String _searchString = '';
+
+  Widget _searchTextField() {
+    return TextField(
+      autofocus: true, 
+      cursorColor: Colors.white,
+      style: const TextStyle(
+        color: Colors.white,
+        fontSize: 20,
+      ),
+      textInputAction: TextInputAction.search, 
+      decoration: const InputDecoration( 
+        enabledBorder: UnderlineInputBorder( 
+          borderSide: BorderSide(color: Colors.white)
+        ),
+        focusedBorder: UnderlineInputBorder( 
+          borderSide: BorderSide(color: Colors.white)
+        ),
+        hintText: 'Search entries by wine name', 
+        hintStyle: TextStyle( 
+          color: Colors.white60,
+          fontSize: 20,
+        ),
+      ),
+      onChanged: (String s) {
+        setState(() {
+          _searchString = s;
+        });
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: !_searchBoolean ? Text('Cellar') : _searchTextField(),
+        actions: !_searchBoolean
+        ? [
+          IconButton(
+          icon: Icon(Icons.search),
+          onPressed: () {
+            setState(() {
+              _searchBoolean = true;
+            });
+          })
+        ] 
+        : [
+          IconButton(
+            icon: Icon(Icons.clear),
+            onPressed: () {
+              setState(() {
+                _searchBoolean = false;
+                _searchString = '';
+              });
+            }
+          )
+        ] 
+      ),
       body: StreamBuilder(
           stream: FirebaseFirestore.instance
               .collection('winematch')
-              .orderBy('timeStamp', descending: true)
+              .where('name', isGreaterThanOrEqualTo: _searchString)
+              .where('name', isLessThan: _searchString +'z')
+              //.orderBy('timeStamp', descending: true)
               .snapshots(),
           builder:
               (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -30,23 +92,28 @@ class EntryListsState extends State<EntryLists> {
                       enabled: true,
                       onTapHint: 'Show post detail',
                       child: ListTile(
-                          title: Text(post.dateTime),
-                          trailing: Text(post.number.toString()),
+                          title: Text(post.name,
+                                      style: TextStyle(fontWeight: FontWeight.bold)),
+                          trailing: Text('Rating: ${post.rating}'),
                           onTap: () {
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //         builder: (context) => JournalDetails(
-                            //             post.number,
-                            //             post.dateTime,
-                            //             post.imageUrl,
-                            //             post.latitude,
-                            //             post.longitude)));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => CellarEntryDetails(
+                                        post.rating,
+                                        post.name,
+                                        post.description,
+                                        post.dateTime,
+                                        post.imageUrl,
+                                        post.latitude,
+                                        post.longitude,
+                                        index, snapshot)));
                           }),
                     );
                   });
             } else {
-              return const Center(child: CircularProgressIndicator());
+              return Center(child: Column(mainAxisAlignment: MainAxisAlignment.center, 
+                children: [CircularProgressIndicator(), Text("No entries!")]));
             }
           }),
       floatingActionButton: Semantics(
@@ -67,13 +134,8 @@ class NewEntryButton extends StatelessWidget {
     return FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () {
-          // Navigator.push(
-          //     context, MaterialPageRoute(builder: (context) => FormRoute()));
-          // DateTime now = DateTime.now();
-          // String formattedDate = DateFormat('kk:mm:ss EEE d MMM').format(now);
-          // FirebaseFirestore.instance
-          //     .collection('wasteagram')
-          //     .add({'name': 'Big Tinks', 'number': 22, 'dateTime' : formattedDate, 'timeStamp' : FieldValue.serverTimestamp()});
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => FormRoute()));
         });
   }
 }

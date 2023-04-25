@@ -29,6 +29,13 @@
             {
               "client_id": "504949298910-a4s4ftebgjadlklhum2cfh0hqgffv228.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "504949298910-oodo8213cp25spr2c3fs8d47f8abmpmo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.winematch"
+              }
             }
           ]
         }
